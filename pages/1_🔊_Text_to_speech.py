@@ -2,6 +2,7 @@ from newspaper import Article
 import nltk
 from gtts import gTTS
 import streamlit as st
+import os
 
 
 def generate_mp3_file_from_link(data):
@@ -30,6 +31,13 @@ def generate_mp3_file_from_input(data):
 
 
 def main():
+    css_path = "styles\main.css"
+    abs_path = os.path.abspath(css_path)
+
+    with open(abs_path) as f:
+        st.markdown("<style>{}</style>".format(f.read()),
+                    unsafe_allow_html=True)
+
     title = '<p style="color:White; font-size: 35px;">Convert text to speech</p>'
     st.markdown(title, unsafe_allow_html=True)
 
@@ -41,6 +49,7 @@ def main():
         # TODO: add progress bar/status
         # TODO: add file uploader maybe
         # TODO: radio choice/language selectbox
+        # TODO: session state
 
     if submit_button:
         if user_article:
