@@ -59,6 +59,7 @@ def check_form(user_article_link, user_article_input):
 
 
 def main():
+    st.sidebar.success("Select project above.")
     css_path = "styles\main.css"
     abs_path = os.path.abspath(css_path)
 

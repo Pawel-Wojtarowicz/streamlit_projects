@@ -38,19 +38,10 @@ def main():
     GITHUB = "www.github.com/Pawel-Wojtarowicz"
     LINKEDIN = "www.linkedin.com/in/pawelwojtarowicz"
 
-    PROJECTS = {"📌 Streamlit Twitter - The app allows you to retrieve Tweets from selected users on \
-                given dates; Users can export them to CSV files and plot a simple chart. In the application, I used Twitter API,\
-                Twitter Scraper, Streamlit, Plotly, and deployed it on Heroku": "https://twitter--streamlit.herokuapp.com",
-
-                "Twitter movie notification - The app sends one tweet daily informing whether the movie \
-                'Kiler' will air. The app connects to Twitter via an API and uses web scraping.": "https://twitter.com/czy_kiler",
-
-                "Bricks - I've aimed to build a Flask app that allows users to choose an official lego set, retrieve its components and find \
-                alternative MOCs to make. The app connects to the Rebrickable API. I used HTML, CSS and Flask to write the app and deployed it on Heroku.":
-                "https://legoflask.herokuapp.com",
-
-                "GUS Dashboard - The app gathers GUS data and plots a chart allowing users to view how the population has changed and will change over the \
-                years. App filters data by gender and age groups. I used Streamlit, Pandas and Plotly and deployed it on Heroku": "https://pandas-streamlit.herokuapp.com"
+    PROJECTS = {"🔗 Streamlit Twitter - download user tweets ": "https://twitter--streamlit.herokuapp.com",
+                "🔗 Twitter movie notification - informaing about the movie": "https://twitter.com/czy_kiler",
+                "🔗 Bricks - find alternative sets": "https://legoflask.herokuapp.com",
+                "🔗 GUS Dashboard app - review GUS data": "https://pandas-streamlit.herokuapp.com"
                 }
 
     col1, col2 = st.columns(2, gap="small")
@@ -65,6 +56,54 @@ def main():
         st.write("📬", EMAIL)
         st.write("🗃️", GITHUB)
         st.write("📇", LINKEDIN)
+
+    st.write("#")
+    st.subheader("Technological stack")
+    st.write(
+        "Python, Java, SQL, Pandas, Flask, Streamlit, Heroku, GIT, HTML, CSS, Bash, UNIX,")
+
+    st.write("#")
+    st.subheader("Work history")
+    st.write("---")
+
+    st.write("🚧", "**IT Specialist (iSeries 2nd level support)**")
+    st.write("*Kyndryl Global Service Delivery Center, Wrocław*")
+    st.write("2021/08 - Present")
+    st.write("""
+            - 📌Support for the server operating system, system management software, and operating system utilities, including upgrades.
+            - 📌Analyze and diagnose bugs, performance issues, and troubleshoot problems.
+            - 📌Recommend operating system updates and configuration modifications.
+            - 📌Applying patches to the operating system.
+            - 📌Assessment of planned changes in the server environment and informing about any requirements supporting such changes.
+            - 📌Incident resolution and on-demand data recovery""")
+
+    st.write("🚧", "**IT Specialist (iSeries 2nd level support)**")
+    st.write("*IBM Global Delivery Center, Wrocław*")
+    st.write("2017/08 - 2021/08")
+    st.write("""
+            - 📌 Planning and monitoring of application deployment to update customer platforms.
+            - 📌 Ensuring user satisfaction by installing enhancements, configuration, preventive maintenance, troubleshooting, and solving complex problems.
+            - 📌 Monitoring and scheduling of tasks. Scheduling and backup via BRMS.
+            - 📌 Examination of failed backups.
+            - 📌 High quality assurance, safety compliance plan, operational procedures to maintain stability and resilience. (Keep the operating system secure)
+             """)
+
+    st.write("🚧", "**IT Specialist (iSeries 1st level support)**")
+    st.write("*IBM Global Delivery Center, Wrocław*")
+    st.write("2015/04 - 2017/08")
+    st.write("""
+            - 📌 Performing daily system monitoring, verifying the integrity and availability of all hardware, server resource systems and key processes.
+            - 📌 Monitor customer changes, service requests, tasks with standard incidents and tool changes to agreed deadlines and processes to maintain stability. 
+            - 📌 Skills required to operate the application and ensure the employee's current knowledge.
+            - 📌 Responsible for sharing, advising and educating others. 
+            - 📌 Understand and follow the compliance requirements set out in the company's policy
+             """)
+
+    st.write("#")
+    st.subheader("My projects")
+    st.write("---")
+    for project, link in PROJECTS.items():
+        st.write(f"[{project}]({link})")
 
 
 if __name__ == "__main__":
