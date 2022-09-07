@@ -32,8 +32,9 @@ def main():
     In 2021, I decided to change my career path to a Python developer. Since then, I have systematically learned and expanded my knowledge by \
     coding various applications."
 
-    SOCIAL_MEDIA = {"EMAIL": "wojtarowicz.pawel@gmail.com",
-                    "GITHUB": "www.github.com/Pawel-Wojtarowicz", "LINKEDIN": "www.linkedin.com/in/pawelwojtarowicz"}
+    EMAIL = "wojtarowicz.pawel@gmail.com"
+    SOCIAL_MEDIA = {"GITHUB": "http://www.github.com/Pawel-Wojtarowicz",
+                    "LINKEDIN": "http://www.linkedin.com/in/pawelwojtarowicz"}
 
     PROJECTS = {"🔗 Streamlit Twitter - downloads the user's tweets": "https://twitter--streamlit.herokuapp.com",
                 "🔗 Twitter movie notification - tells you if a movie is on TV": "https://twitter.com/czy_kiler",
@@ -43,6 +44,7 @@ def main():
 
     col1, col2 = st.columns(2, gap="small")
     with col1:
+        st.write("#")
         st.image(profile_pic, width=330)
 
     with col2:
@@ -50,16 +52,14 @@ def main():
         st.write(BIO)
         st.download_button(label="📄 Download Resume", data=pdf_file,
                            file_name="resume.pdf", mime="application/octet-stream")
+        st.write("📬", EMAIL)
 
     st.write("#")
     cols = st.columns(len(SOCIAL_MEDIA))
     for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
         cols[index].write(f"- [{platform}]({link})")
-    # st.write("📬", EMAIL)
-    # st.write("🗃️", GITHUB)
-    # st.write("📇", LINKEDIN)
 
-    st.write("#")
+    st.write("---")
     st.subheader("TECHNOLOGY STACK")
     st.write(
         "- Python, Java, SQL, Pandas, Flask, Streamlit, Heroku, GIT, HTML, CSS, Bash, UNIX,")
