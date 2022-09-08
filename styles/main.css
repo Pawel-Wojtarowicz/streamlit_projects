@@ -15,6 +15,11 @@ a:hover {
     text-decoration: none;
 }
 
+img[alt=zdj] {
+    width: 700px;
+
+}
+
 hr {
     margin-top: 0px;
     margin-bottom: 5px;
