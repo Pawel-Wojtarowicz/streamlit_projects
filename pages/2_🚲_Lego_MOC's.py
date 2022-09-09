@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import rebrick
 import json
-from PIL import Image
 
 
 def main():
@@ -18,19 +17,17 @@ def main():
     title = '<p style="color:White; font-size: 35px;">Alternative LEGO sets</p>'
     st.markdown(title, unsafe_allow_html=True)
 
-    st.write("🚧", "under construction")
-
     with st.form(key="myform"):
         provided_lego_set = st.number_input(
-            label="Provide LEGO set", value=0, step=1)
-        submitted = st.form_submit_button("Find alternatives LEGO sets")
+            label="Enter LEGO set", value=0, step=1)
+        submitted = st.form_submit_button("Find MOC")
 
     if submitted:
         try:
             response = rebrick.lego.get_set_alternates(provided_lego_set)
             results = json.loads(response.read())
             if results['count'] == 0:
-                st.error("Nie ma takiego zestawu")
+                st.error("No MOC for provided LEGO set")
             else:
                 mocs = results["results"]
                 names = ([d["name"] for d in mocs])
