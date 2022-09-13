@@ -7,7 +7,7 @@ from PIL import Image
 
 def main():
     st.set_page_config(page_title="My projects",
-                       page_icon=":desktop_computer:")
+                       page_icon=":desktop_computer:", layout="wide")
 
     # files
     css_file = "styles\main.css"
@@ -42,12 +42,12 @@ def main():
                 "🔗 GUS Dashboard app - reviewing gus data": "https://pandas-streamlit.herokuapp.com"
                 }
 
-    col1, col2 = st.columns(2, gap="small")
-    with col1:
+    col1, col2, col3 = st.columns(3, gap="small")
+    with col2:
         st.write("#")
         st.image(profile_pic, width=330)
 
-    with col2:
+    with col3:
         st.title("Hi All 🙋")
         st.write(BIO)
         st.download_button(label="📄 Download Resume", data=pdf_file,
@@ -55,7 +55,7 @@ def main():
         st.write("📬", EMAIL)
 
     st.write("#")
-    cols = st.columns(len(SOCIAL_MEDIA))
+    cols = st.columns(len(SOCIAL_MEDIA) + 10) 
     for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
         cols[index].write(f"- [{platform}]({link})")
 
