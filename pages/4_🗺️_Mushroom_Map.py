@@ -7,7 +7,6 @@ from streamlit.runtime.legacy_caching import clear_cache as clear_cache
 
 # TODO: add possibility to load file with coordinates
 # TODO: add possiblity to add markers without coordinates, just enter street name
-# TODO: add more details to markers
 
 st.title("Mushroom Map")
 st.sidebar.success("Select project above.")
@@ -21,14 +20,15 @@ with open(abs_path) as f:
 
 if "mdf" not in st.session_state:
     st.session_state.mdf = pd.DataFrame(
-        columns=["Label", "Latitude", "Longitude"])
+        columns=["Label", "Latitude", "Longitude", "Quantity"])
 
 map = folium.Map(location=[52.32, 19.42], zoom_start=6)
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 label = col1.text_input("Label")
 latitude = col2.number_input("Latitude", step=1., format="%.7f")
 longitude = col3.number_input("Longitude", step=1., format="%.7f")
+quantity = col4.number_input("Quantinty per hour", step=1)
 
 col1, col2 = st.columns([1, 16])
 with col1:
@@ -39,10 +39,13 @@ with col2:
 
 df_new = pd.DataFrame({"Label": label,
                        "Latitude": latitude,
-                       "Longitude": longitude}, index=[label])
+                       "Longitude": longitude,
+                       "Quantity": quantity}, index=[label])
 
 if run:
     st.session_state.mdf = pd.concat([st.session_state.mdf, df_new], axis=0)
+    st.session_state.mdf['marker_color'] = pd.cut(st.session_state.mdf['Quantity'], bins=4,
+                                                  labels=['orange', 'lightred', 'red', 'darkred'])
 
 if clear:
     st.session_state.mdf.drop(st.session_state.mdf.index, inplace=True)
@@ -62,7 +65,7 @@ with col1:
 
 for i in range(0, len(st.session_state.mdf)):
     folium.Marker(location=[st.session_state.mdf.iloc[i]["Latitude"], st.session_state.mdf.iloc[i]
-                  ["Longitude"]], popup=st.session_state.mdf.iloc[i]["Label"]).add_to(map)
+                            ["Longitude"]], popup=st.session_state.mdf.iloc[i]["Label"], tooltip=st.session_state.mdf.iloc[i]["Quantity"], icon=folium.Icon(color=st.session_state.mdf.iloc[i]['marker_color'])).add_to(map)
 
 with col3:
     st.data = st_folium(map, width=1000, height=500)
