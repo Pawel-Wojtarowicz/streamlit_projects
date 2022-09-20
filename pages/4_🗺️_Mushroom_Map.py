@@ -4,6 +4,8 @@ import folium
 from streamlit_folium import st_folium
 import os
 from streamlit.runtime.legacy_caching import clear_cache as clear_cache
+from folium.plugins import Draw
+
 
 # TODO: add possibility to load file with coordinates
 # TODO: add possiblity to add markers without coordinates, just enter street name
@@ -24,6 +26,14 @@ if "mdf" not in st.session_state:
 
 map = folium.Map(location=[52.32, 19.42], zoom_start=6)
 
+my_marker = folium.LatLngPopup()
+map.add_child(my_marker)  
+
+#TODO: check another version of the map 
+# Draw(export=False).add_to(map)
+# output = st_folium(map, width=500, height=500)
+# st.write(output)
+  
 col1, col2, col3, col4 = st.columns(4)
 label = col1.text_input("Label")
 latitude = col2.number_input("Latitude", step=1., format="%.7f")
@@ -61,6 +71,7 @@ with col1:
             """
 
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
+    st.write("My data")
     st.table(st.session_state.mdf)
 
 for i in range(0, len(st.session_state.mdf)):
@@ -69,3 +80,7 @@ for i in range(0, len(st.session_state.mdf)):
 
 with col3:
     st.data = st_folium(map, width=1000, height=500)
+   
+
+
+
