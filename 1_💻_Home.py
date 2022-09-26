@@ -19,7 +19,8 @@ def main():
 
     with open(css_path) as f:
         st.markdown("<style>{}</style>".format(f.read()),
-                    unsafe_allow_html=True)
+                unsafe_allow_html=True)
+    
     with open(resume_path, "rb") as f:
         pdf_file = f.read()
 

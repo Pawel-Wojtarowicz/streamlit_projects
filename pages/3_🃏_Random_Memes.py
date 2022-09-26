@@ -13,13 +13,6 @@ def get_meme():
     return subreddit, meme
 
 
-# def get_width(mystring):
-#     s = mystring
-#     start = 'width='
-#     end = '&crop'
-#     return s[s.find(start)+len(start):s.rfind(end)]
-
-
 def main():
 
     st.sidebar.success("Select project above.")
@@ -30,10 +23,10 @@ def main():
         st.markdown("<style>{}</style>".format(f.read()),
                     unsafe_allow_html=True)
 
-    title = '<p style="color:White; font-size: 35px;">Random Memes every 30 seconds</p>'
+    title = '<p style="color:White; font-size: 35px;">Random Memes every 20 seconds</p>'
     st.markdown(title, unsafe_allow_html=True)
     st.write("---")
-    count = st_autorefresh(interval=30000)
+    count = st_autorefresh(interval=20000)
 
     if count == 0 or count != 0:
         subreddit, meme = get_meme()
