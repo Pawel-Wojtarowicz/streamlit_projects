@@ -37,10 +37,10 @@ def main():
     SOCIAL_MEDIA = {"GITHUB": "http://www.github.com/Pawel-Wojtarowicz",
                     "LINKEDIN": "http://www.linkedin.com/in/pawelwojtarowicz"}
 
-    PROJECTS = {"🔗 Streamlit Twitter - downloads the user's tweets": "https://twitter--streamlit.herokuapp.com",
-                "🔗 Twitter movie notification - tells you if a movie is on TV": "https://twitter.com/czy_kiler",
-                "🔗 Bricks - finding alternative LEGO sets": "https://legoflask.herokuapp.com",
-                "🔗 GUS Dashboard app - reviewing gus data": "https://pandas-streamlit.herokuapp.com"
+    PROJECTS = {"🔗 Streamlit Twitter - download the user's tweets and ploting a chart": "https://twitter--streamlit.herokuapp.com",
+                "🔗 Twitter movie notification - tells you if a movie is on TV and sends a tweet": "https://twitter.com/czy_kiler",
+                "🔗 Bricks - you can find a MOC for LEGO set": "https://legoflask.herokuapp.com",
+                "🔗 GUS Dashboard app - reviewing GUS data": "https://pandas-streamlit.herokuapp.com"
                 }
 
     col1, col2, col3 = st.columns(3, gap="small")
@@ -102,11 +102,11 @@ def main():
             - Understand and follow the compliance requirements set out in the company's policy
              """)
 
-    st.write("#")
-    st.subheader("MY PROJECTS")
-    st.write("---")
-    for project, link in PROJECTS.items():
-        st.write(f"[{project}]({link})")
+    # st.write("#")
+    # st.subheader("MY PROJECTS")
+    # st.write("---")
+    # for project, link in PROJECTS.items():
+    #     st.write(f"[{project}]({link})")
 
 
 if __name__ == "__main__":

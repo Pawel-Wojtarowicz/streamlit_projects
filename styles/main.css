@@ -17,7 +17,7 @@ a:hover {
 
 img[alt=zdj] {
     width: 700px;
-
+    
 }
 
 hr {
@@ -37,3 +37,13 @@ header {
     visibility: hidden
 }
 
+button[title="View fullscreen"]{
+    visibility: hidden;}
+
+
+th:first-child  {
+        display: none;
+}
+table{
+    max-width: 875px;
+}

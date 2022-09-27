@@ -27,7 +27,7 @@ def main():
     provided_lego_set = 42100
     with st.form(key="myform"):
         provided_lego_set = st.number_input(label="Enter LEGO set", value=42100, step=1)
-        st.form_submit_button("Enter LEGO set to find a MOC")
+        st.form_submit_button("Find a MOC")
 
 
     try:
