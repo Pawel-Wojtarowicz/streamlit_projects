@@ -29,7 +29,7 @@ def main():
     # main site
     st.sidebar.success("Select project above.")
 
-    BIO = "My name is **Paweł Wojtarowicz**, and I am currently working as a *SYSADMIN* in a reputable company for over 7 years.\
+    BIO = "My name is **Paweł**, and I am currently working as a *SYSADMIN* in a reputable company for over 7 years.\
     In 2021, I decided to change my career path to a Python developer. Since then, I have systematically learned and expanded my knowledge by \
     coding various applications."
 
