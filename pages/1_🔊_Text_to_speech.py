@@ -7,9 +7,9 @@ import time
 from gtts.lang import tts_langs
 
 
-def language():
+def languages():
     langs = tts_langs()
-    return langs.items()
+    return langs
 
 
 @st.cache(suppress_st_warning=True)
@@ -32,16 +32,16 @@ def generate_mp3_file_from_link(data, lng):
         my_bar.progress(percent_complete + 1)
 
     # downloading
-    with open('article.mp3', 'rb') as f:
+    with open('audio.mp3', 'rb') as f:
         st.download_button('Download mp3 file', f, file_name='file.mp3')
 
 
 @st.cache(suppress_st_warning=True)
-def generate_mp3_file_from_input(data, lng):
+def generate_mp3_file_from_text(data, lng):
     mytext = data
     language = lng
     myobj = gTTS(text=mytext, lang=language, slow=False)
-    myobj.save("article.mp3")
+    myobj.save("audio.mp3")
 
     # progress bar
     my_bar = st.progress(0)
@@ -50,19 +50,8 @@ def generate_mp3_file_from_input(data, lng):
         my_bar.progress(percent_complete + 1)
 
     # downloading
-    with open('article.mp3', 'rb') as f:
+    with open('audio.mp3', 'rb') as f:
         st.download_button('Download mp3 file', f, file_name='file.mp3')
-
-# form logic
-
-
-def check_form(user_article_link, user_article_input, lng):
-    if user_article_link != "" and user_article_input != "":
-        st.error("Select only one form")
-    elif user_article_link != "":
-        generate_mp3_file_from_link(user_article_link, lng)
-    else:
-        generate_mp3_file_from_input(user_article_input, lng)
 
 
 def main():
@@ -77,21 +66,26 @@ def main():
     title = '<p style="color:White; font-size: 35px;">Convert text to speech</p>'
     st.markdown(title, unsafe_allow_html=True)
 
-    with st.form(key="myform"):
-        user_article_link = st.text_input("Enter your link")
-        user_article_input = st.text_area('or paste text to convert')
-        lng = st.selectbox(label="Choose Language", options=language())
-        submitted = st.form_submit_button("Generate mp3 file")
+    with st.form(key="myform", clear_on_submit=True):
+        set_lng = languages()
+        user_article_link = st.text_input(label="Enter your link")
+        user_article_text = st.text_area(label="or paste text to convert")
+        language = st.selectbox(
+            label="and choose your language", options=set_lng.values(), index=11)
+        choosen_language = (list(set_lng.keys())[
+                            list(set_lng.values()).index(language)])
+        submitted = st.form_submit_button(label="Generate mp3 file")
 
     if submitted:
-        check_form(user_article_link, user_article_input, lng[0])
+        if user_article_link and not user_article_text:
+            generate_mp3_file_from_link(user_article_link, choosen_language)
+        if user_article_text and not user_article_link:
+            generate_mp3_file_from_text(user_article_text, choosen_language)
+        if user_article_link and user_article_text:
+            st.error("Select one option")
+        if not user_article_link and not user_article_text:
+            st.error("Nothing has been selected")
 
 
 if __name__ == '__main__':
     main()
-    st.session_state
-
-# TODO: try/catch validation empty inputs
-# TODO: add clear form, clear text_input after submit, refresh form
-# TODO: add file uploader maybe
-# TODO: radio choice/language selectbox
