@@ -16,12 +16,16 @@ def main():
     PROJECTS = {"🔗 Streamlit Twitter - download the user's tweets and plot a chart": ["https://twitter--streamlit.herokuapp.com",
                 """- In this project, I learned how to work with the Twitter API and the Twitter Scrapper, as well
                      as how to save and load data to/from files such as CSV and how to plot simple charts."""],
-                "🔗 Twitter movie notification - tells you if a movie is on TV and sends a tweet": ["https://github.com/Pawel-Wojtarowicz/Python/tree/master/twitter", 
-                "- I have learned how to scrapp data from web page without API"],
-                "🔗 GUS Dashboard app - historical and forecast yearbook data from the Central Statistical Office": ["https://pandas-streamlit.herokuapp.com", 
-                "- I learned about the Pandas library and how to create simple dataframes and operate on the data."],
+                "🔗 NBP Currency exchanger with API": ["https://github.com/Pawel-Wojtarowicz/nbp-api", """- During the writing of this application, 
+                                                       I learned how to create local databases based on previously downloaded information. 
+                                                       How to process them into .json format and finally upload them to the S3 platform on AWS. 
+                                                       With this project, I also learned about Docker and created a DocerFile for future containerization. """],
+                "🔗 Twitter movie notification - tells you if a movie is on TV and sends a tweet": ["https://github.com/Pawel-Wojtarowicz/Python/tree/master/twitter",
+                                                                                                   "- I have learned how to scrapp data from web page without API"],
+                "🔗 GUS Dashboard app - historical and forecast yearbook data from the Central Statistical Office": ["https://pandas-streamlit.herokuapp.com",
+                                                                                                                    "- I learned about the Pandas library and how to create simple dataframes and operate on the data."],
                 "🔗 Password manager - GUI password manager written with tkinter": ["https://github.com/Pawel-Wojtarowicz/password_manager",
-                """- In this project, I learned about the tkinter library and learned how to build a GUI application. 
+                                                                                   """- In this project, I learned about the tkinter library and learned how to build a GUI application. 
                 I learned the basics of cryptography to create the secret key needed to encrypt provided user passwords."""],
                 "🔗 Lotto - is it worth playing or not": ["https://github.com/Pawel-Wojtarowicz/Python/tree/master/Lotto", ""],
                 }
