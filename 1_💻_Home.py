@@ -63,13 +63,14 @@ def main():
     st.write("---")
     st.subheader("TECHNOLOGY STACK")
     st.write(
-        "- Python, Java, SQL, Pandas, Flask, Streamlit, Heroku, GIT, HTML, CSS, Bash, UNIX,")
+        "- Python, Java, SQL, SQLite, Pandas, Plotly, Flask, Streamlit, Heroku, GIT, HTML, CSS, Bash, UNIX, Docker, AWS")
 
     st.write("#")
     st.subheader("WORK HISTORY")
     st.write("---")
 
-    st.write("🚧", "**IT Specialist (iSeries 2nd level support)**")
+    title = '<p style="color:#d33682; font-size: 20px;">🚧 IT Specialist (iSeries 2nd level support)</p>'
+    st.markdown(title, unsafe_allow_html=True)
     st.write("*Kyndryl Global Service Delivery Center, Wrocław*")
     st.write("2021/08 - Present")
     st.write("""
@@ -80,7 +81,8 @@ def main():
             - Assessment of planned changes in the server environment and informing about any requirements supporting such changes.
             - Incident resolution and on-demand data recovery""")
 
-    st.write("🚧", "**IT Specialist (iSeries 2nd level support)**")
+    title = '<p style="color:#d33682; font-size: 20px;">🚧 IT Specialist (iSeries 2nd level support)</p>'
+    st.markdown(title, unsafe_allow_html=True)
     st.write("*IBM Global Delivery Center, Wrocław*")
     st.write("2017/08 - 2021/08")
     st.write("""
@@ -91,7 +93,9 @@ def main():
             - High quality assurance, safety compliance plan, operational procedures to maintain stability and resilience. (Keep the operating system secure)
              """)
 
-    st.write("🚧", "**IT Specialist (iSeries 1st level support)**")
+
+    title = '<p style="color:#d33682; font-size: 20px;">🚧 IT Specialist (iSeries 1st level support)</p>'
+    st.markdown(title, unsafe_allow_html=True)
     st.write("*IBM Global Delivery Center, Wrocław*")
     st.write("2015/04 - 2017/08")
     st.write("""
