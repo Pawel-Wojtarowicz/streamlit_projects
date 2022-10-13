@@ -9,7 +9,7 @@ import os
 title = '<p style="color:White; font-size: 35px;">Mushroom Map</p>'
 st.markdown(title, unsafe_allow_html=True)
 st.sidebar.success("Select project above.")
-css_path = "styles\main.css"
+css_path = "styles/main.css"
 abs_path = os.path.abspath(css_path)
 
 # ------SESSION STATE

@@ -16,7 +16,7 @@ def get_meme():
 def main():
 
     st.sidebar.success("Select project above.")
-    css_path = "styles\main.css"
+    css_path = "styles/main.css"
     abs_path = os.path.abspath(css_path)
 
     with open(abs_path) as f:

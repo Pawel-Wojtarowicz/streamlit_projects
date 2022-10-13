@@ -10,7 +10,7 @@ if "response" not in st.session_state:
 
 def main():
     st.sidebar.success("Select project above.")
-    css_path = "styles\main.css"
+    css_path = "styles/main.css"
     abs_path = os.path.abspath(css_path)
     # rebrick.init("8e81bf52ab2d71baadb63847e48d5035")
 

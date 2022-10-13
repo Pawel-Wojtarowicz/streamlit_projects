@@ -6,7 +6,7 @@ def main():
     title = '<p style="color:White; font-size: 35px;">My other projects.</p>'
     st.markdown(title, unsafe_allow_html=True)
     st.sidebar.success("Select project above.")
-    css_path = "styles\main.css"
+    css_path = "styles/main.css"
     abs_path = os.path.abspath(css_path)
 
     with open(abs_path) as f:
