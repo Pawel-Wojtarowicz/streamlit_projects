@@ -10,7 +10,7 @@ def main():
                        page_icon=":desktop_computer:", layout="wide")
 
     # files
-    css_file = "styles\main.css"
+    css_file = "styles/main.css"
     css_path = os.path.abspath(css_file)
     resume_file = "assets/resume.pdf"
     resume_path = os.path.abspath(resume_file)
