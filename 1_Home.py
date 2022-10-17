@@ -19,14 +19,13 @@ def main():
 
     with open(css_path) as f:
         st.markdown("<style>{}</style>".format(f.read()),
-                unsafe_allow_html=True)
-    
+                    unsafe_allow_html=True)
+
     with open(resume_path, "rb") as f:
         pdf_file = f.read()
 
     profile_pic = Image.open(picture_path)
 
-    # main site
     st.sidebar.success("Select project above.")
 
     BIO = "My name is **Paweł**, and I am currently working as a *SYSADMIN* in a reputable company for over 7 years.\
@@ -36,12 +35,6 @@ def main():
     EMAIL = "wojtarowicz.pawel@gmail.com"
     SOCIAL_MEDIA = {"GITHUB": "http://www.github.com/Pawel-Wojtarowicz",
                     "LINKEDIN": "http://www.linkedin.com/in/pawelwojtarowicz"}
-
-    PROJECTS = {"🔗 Streamlit Twitter - download the user's tweets and ploting a chart": "https://twitter--streamlit.herokuapp.com",
-                "🔗 Twitter movie notification - tells you if a movie is on TV and sends a tweet": "https://twitter.com/czy_kiler",
-                "🔗 Bricks - you can find a MOC for LEGO set": "https://legoflask.herokuapp.com",
-                "🔗 GUS Dashboard app - reviewing GUS data": "https://pandas-streamlit.herokuapp.com"
-                }
 
     col1, col2, col3 = st.columns(3, gap="small")
     with col2:
@@ -56,14 +49,14 @@ def main():
         st.write("📬", EMAIL)
 
     st.write("#")
-    cols = st.columns(len(SOCIAL_MEDIA) + 10) 
+    cols = st.columns(len(SOCIAL_MEDIA) + 10)
     for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
         cols[index].write(f"- [{platform}]({link})")
 
     st.write("---")
     st.subheader("TECHNOLOGY STACK")
     st.write(
-        "- Python, Java, SQL, SQLite, Pandas, Plotly, Flask, Streamlit, Heroku, GIT, HTML, CSS, Bash, UNIX, Docker, AWS")
+        "- Python, Java, SQL, SQLite, Pandas, Plotly, Flask, Streamlit, GIT, HTML, CSS, Bash, UNIX, Docker, AWS-S3, Heroku, Railway")
 
     st.write("#")
     st.subheader("WORK HISTORY")
@@ -93,7 +86,6 @@ def main():
             - High quality assurance, safety compliance plan, operational procedures to maintain stability and resilience. (Keep the operating system secure)
              """)
 
-
     title = '<p style="color:#d33682; font-size: 20px;">🚧 IT Specialist (iSeries 1st level support)</p>'
     st.markdown(title, unsafe_allow_html=True)
     st.write("*IBM Global Delivery Center, Wrocław*")
@@ -105,12 +97,6 @@ def main():
             - Responsible for sharing, advising and educating others.
             - Understand and follow the compliance requirements set out in the company's policy
              """)
-
-    # st.write("#")
-    # st.subheader("MY PROJECTS")
-    # st.write("---")
-    # for project, link in PROJECTS.items():
-    #     st.write(f"[{project}]({link})")
 
 
 if __name__ == "__main__":

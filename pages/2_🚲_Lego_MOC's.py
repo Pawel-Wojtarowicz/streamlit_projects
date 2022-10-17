@@ -21,8 +21,6 @@ def main():
  
     title = '<p style="color:White; font-size: 30px;">With this app you can find alternative LEGO sets with <a href="https://rebrickable.com/">"REBRICKABLE API"</a></p>'
     st.markdown(title, unsafe_allow_html=True)
-    flask_version = '<a href="https://legoflask.herokuapp.com">-> FLASK version</a>'
-    st.markdown(flask_version, unsafe_allow_html=True)
     
     provided_lego_set = 42100
     with st.form(key="myform"):
