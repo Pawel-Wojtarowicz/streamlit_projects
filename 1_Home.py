@@ -56,7 +56,7 @@ def main():
     st.write("---")
     st.subheader("TECHNOLOGY STACK")
     st.write(
-        "- Python, Java, SQL, SQLite, Pandas, Plotly, Flask, Streamlit, GIT, HTML, CSS, Bash, UNIX, Docker, AWS-S3, Heroku, Railway")
+        "- Python, Java, SQL, SQLite, Pandas, NumPy, Plotly, Flask, Streamlit, GIT, HTML, CSS, Bash, UNIX, Docker, AWS-S3, Heroku, Railway, Render")
 
     st.write("#")
     st.subheader("WORK HISTORY")
