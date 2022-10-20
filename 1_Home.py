@@ -12,7 +12,7 @@ def main():
     # files
     css_file = "styles/main.css"
     css_path = os.path.abspath(css_file)
-    resume_file = "assets/resume.pdf"
+    resume_file = "assets/PWojtarowicz_CV.pdf"
     resume_path = os.path.abspath(resume_file)
     profile_picture = "assets/profile-pic.png"
     picture_path = os.path.abspath(profile_picture)
@@ -44,8 +44,8 @@ def main():
     with col3:
         st.title("Hi All 🙋")
         st.write(BIO)
-        st.download_button(label="📄 Download Resume", data=pdf_file,
-                           file_name="resume.pdf", mime="application/octet-stream")
+        st.download_button(label="📄 Download CV", data=pdf_file,
+                           file_name="PWojtarowicz_CV.pdf", mime="application/octet-stream")
         st.write("📬", EMAIL)
 
     st.write("#")
